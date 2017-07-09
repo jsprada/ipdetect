@@ -33,9 +33,10 @@ def check_for_new_ip(base_scan, new_scan, ignore_list):
 def main(range, ignore_list):
 
     print("Starting scan on: %s. Press CTRL-C to stop" % range)
+    print("Ignoring %s" % ignore_list)
     print("Establishing baseline scan")
     baseline_scan = scanner.NewScan(range)
-    
+    print("Connect your new device now.")
     while True:
         time.sleep(1)
 
