@@ -1,0 +1,62 @@
+#!/usr/bin/python3
+import scanner
+import time
+
+ip_range = "192.168.1.0/24"
+ignore_list = ['192.168.1.140', '192.168.1.138']
+
+def check_ignore(ip_list, ignore_list):
+    #s = set(ignore_list)
+    diff = [x for x in ip_list if x not in set(ignore_list)] 
+
+    if len(diff) > 0:
+        return diff
+    else:
+        print("Ignoring %s" % ip_list)
+        return "Ignore"
+
+def check_for_new_ip(base_scan, new_scan, ignore_list):
+    #s = set(base_scan)
+    diff = [x for x in new_scan if x not in set(base_scan)] 
+
+    if len(diff) > 0:
+        new_ip = check_ignore(diff, ignore_list)
+
+        if new_ip != "Ignore":
+            return new_ip
+        else:
+            return 0
+    else:
+        return 0
+
+
+def main(range, ignore_list):
+
+    print("Starting scan on: %s. Press CTRL-C to stop" % range)
+    print("Establishing baseline scan")
+    baseline_scan = scanner.NewScan(range)
+    
+    while True:
+        time.sleep(1)
+
+        print("Scanning for new IPs")
+        new_scan = scanner.NewScan(range)
+        new_ip = check_for_new_ip(baseline_scan.active_ips, new_scan.active_ips, ignore_list)
+
+        if new_ip != 0:
+            stop("new IP detected: %s" % new_ip)
+            break
+        else:
+            print("No new IPs detected yet")
+
+
+def stop(message):
+    print("Scan stopped, %s" % message)
+
+
+if __name__=='__main__':
+    try:
+        main(ip_range, ignore_list)
+
+    except KeyboardInterrupt:
+        stop("user bailed")

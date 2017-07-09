@@ -1,0 +1,18 @@
+# Foundation
+objectify
+write tests
+
+# Features
+set default ip range, save in ~/.config/ipd/config
+pass ip range over terminal
+write help
+ip ignore list (192.168.1.140, for example - printer) save in ~/.config/ipd/ignore
+silent option - only output an IP once it's found
+verbose mode - show baseline/diff scans
+hit any key to end
+Add time delay to rescan baseline 
+
+# Packaging
+make installer
+/usr/sbin/
+/etc/
