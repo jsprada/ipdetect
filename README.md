@@ -42,7 +42,52 @@ A list of IP addresses to ignore.  This is useful if you have a wifi device (pri
 
 ## Use
 
-Run the script, it will start scanning.  Start up your new device on the netowrk. When found, the new address will be displayed and the script will stop.   
+Run the script from a computer on the network, it will start scanning.  Start up your new device on the netowrk. When found, the new address will be displayed and the script will stop.  Press CTRL-C to stop the script manually.
+
+Example output:
+
+```
+$ ./ipdetect
+Starting scan on: 192.168.1.0/24. Press CTRL-C to stop
+Ignoring ['192.168.1.140', '192.168.1.138']
+Establishing baseline scan
+ - 192.168.1.1 is up
+ - 192.168.1.2 is up
+ - 192.168.1.16 is up
+ - 192.168.1.22 is up
+ - 192.168.1.100 is up
+ - 192.168.1.104 is up
+ - 192.168.1.108 is up
+ - 192.168.1.110 is up
+ - 192.168.1.198 is up
+Connect your new device now.
+Scanning for new IPs
+ - 192.168.1.1 is up
+ - 192.168.1.2 is up
+ - 192.168.1.16 is up
+ - 192.168.1.22 is up
+ - 192.168.1.100 is up
+ - 192.168.1.104 is up
+ - 192.168.1.110 is up
+ - 192.168.1.140 is up
+ - 192.168.1.198 is up
+Ignoring ['192.168.1.140']
+No new IPs detected yet
+Scanning for new IPs
+ - 192.168.1.1 is up
+ - 192.168.1.2 is up
+ - 192.168.1.16 is up
+ - 192.168.1.22 is up
+ - 192.168.1.100 is up
+ - 192.168.1.104 is up
+ - 192.168.1.105 is up
+ - 192.168.1.108 is up
+ - 192.168.1.110 is up
+ - 192.168.1.140 is up
+ - 192.168.1.198 is up
+Scan stopped, new IP detected: ['192.168.1.105']
+
+```
 
 
 ## Todo
