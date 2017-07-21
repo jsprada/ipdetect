@@ -1,7 +1,7 @@
 # ipdetect
 Detect a new IP address used on a subnet. 
 
-Specifically, I created this script to easily find the IP address of a new headless computer, like a Raspberry Pi on the network.  This is a tool I developed for my own necesseity, feel free to use it as you wish.
+Specifically, I created this script to easily find the IP address of a new headless computer, like a Raspberry Pi on the network.  This is a tool I developed for my own necessity, feel free to use it as you wish.
 
 ## Requirements
 
