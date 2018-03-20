@@ -42,7 +42,7 @@ A list of IP addresses to ignore.  This is useful if you have a wifi device (pri
 
 ## Use
 
-Run the script from a computer on the network, it will start scanning.  Start up your new device on the netowrk. When found, the new address will be displayed and the script will stop.  Press CTRL-C to stop the script manually.
+Run the script from a computer on the network, it will start scanning.  Start up your new device on the network. When found, the new address will be displayed and the script will stop.  Press CTRL-C to stop the script manually.
 
 Example output:
 
