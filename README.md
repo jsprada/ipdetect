@@ -26,13 +26,17 @@ Install the required Python modules
 
     $ sudo pip install -r requirements.txt
 
-Make the script executable 
+Make the script executable (optional)
 
     $ chmod +x ipdetect
 
 Run it
 
     $ ./ipdetect
+    
+or (if you opt out of making it executable):
+
+    $ pyhton ipdetect
 
 ## Setup
 Edit `ipdetect` file.  There are two variables near the beginning of the script, `ip_range` and `ignore_list`
