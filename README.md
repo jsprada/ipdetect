@@ -1,7 +1,9 @@
 # ipdetect
 Detect a new IP address used on a subnet. 
 
-Specifically, I created this script to easily find the IP address of a new headless computer, like a Raspberry Pi, or an IoT device on the network.  This is a tool I developed for my own necessity, feel free to use it as you wish.   The underlying mechanism is an ARP scan, with a few extra features to make it more convenient.
+When building an IoT device, it can be difficult to connect to it via SSH until you know the IP address Unless you connect a monitor and keyboard, serial device, or assign IP by MAC.   This is a simple utility that I created as a wrapper around ARP. 
+
+I created this script to make it easy to find the IP address of a new headless computer, like a Raspberry Pi, or an IoT device on the network.  This is a tool I developed for my own necessity, feel free to use it as you wish.   The underlying mechanism is an ARP scan, with a few extra features to make it more convenient.
 
 Note: Only tested on Linux.
 
@@ -44,7 +46,7 @@ A list of IP addresses to ignore.  This is useful if you have a previously known
 
 ## Use
 
-Run the script from a computer on the network, it will start scanning.  Start up your new device on the network. When found, the new address will be displayed and the script will stop.  Press CTRL-C to stop the script manually.
+Run the script from a computer on the network, it will start scanning.   First it will inventory the existing devices on the network and store these as a baseline scan.  Connect and start up your Pi or IoT device on the network.  When found, the new address will be displayed and the script will stop.   Press CTRL-C to stop the script manually.
 
 Example output:
 
@@ -93,4 +95,6 @@ Scan stopped, new IP detected: ['192.168.1.105']
 
 
 ## Todo
-* objectify/cleanup/reorganize
+* objectify/cleanup/reorganize/
+* auto-detect IP range
+* compile and add to AUR for Arch Linux users.
