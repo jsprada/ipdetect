@@ -1,7 +1,9 @@
 # ipdetect
 Detect a new IP address used on a subnet. 
 
-Specifically, I created this script to easily find the IP address of a new headless computer, like a Raspberry Pi on the network.  This is a tool I developed for my own necessity, feel free to use it as you wish.
+Specifically, I created this script to easily find the IP address of a new headless computer, like a Raspberry Pi, or an IoT device on the network.  This is a tool I developed for my own necessity, feel free to use it as you wish.   The underlying mechanism is an ARP scan, with a few extra features to make it more convenient.
+
+Note: Only tested on Linux.
 
 ## Requirements
 
@@ -38,7 +40,7 @@ The subnet that you wish to scan.
 For example, to scan a 192.168.1.x subnet, use `192.168.1.0/24`  to scan a 10.0.0.x subnet, use `10.0.0.0/24`
 
 ### ignore_list
-A list of IP addresses to ignore.  This is useful if you have a wifi device (printer, tablet, laptop) that bobs on and off the network
+A list of IP addresses to ignore.  This is useful if you have a previously known wifi device, like a phone, printer, tablet, laptop, etc. that bobs on and off the network.   Add those addresses to this list, and `ipdetect` will ignore it.
 
 ## Use
 
