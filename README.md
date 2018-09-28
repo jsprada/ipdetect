@@ -1,7 +1,7 @@
 # ipdetect
 Detect a new IP address used on a subnet. 
 
-When building an IoT device, it can be difficult to connect to it via SSH until you know the IP address Unless you connect a monitor and keyboard, serial device, or assign IP by MAC.   This is a simple utility that I created as a wrapper around ARP. 
+When building an IoT device, you can't connect to it using SSH until you know the IP address.   This is a simple utility that I created as a wrapper around an nmap ARP scan to find and report the IP address of a new device on the network. 
 
 I created this script to make it easy to find the IP address of a new headless computer, like a Raspberry Pi, or an IoT device on the network.  This is a tool I developed for my own necessity, feel free to use it as you wish.   The underlying mechanism is an ARP scan, with a few extra features to make it more convenient.
 
